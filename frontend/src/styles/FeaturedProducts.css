@@ -1,0 +1,32 @@
+.featured{
+
+padding:120px 8%;
+
+}
+
+.featured h1{
+
+font-size:3rem;
+
+margin-bottom:10px;
+
+}
+
+.featured p{
+
+color:#aaa;
+
+margin-bottom:50px;
+
+}
+
+.products-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+}
