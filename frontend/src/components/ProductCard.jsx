@@ -7,11 +7,13 @@ export default function ProductCard({ product }) {
   return (
     <motion.div
       className="product-card"
-
       variants={fadeUp}
-
-      initial
-      
+      initial="hidden"
+      whileInView={"visible"}
+      viewport={{
+        once: false,
+        amount: 0.15,
+      }}
       whileHover={{
         y: -12,
         scale: 1.03,
@@ -30,7 +32,6 @@ export default function ProductCard({ product }) {
         <h3>{product.name}</h3>
 
         <p>{product.brand}</p>
-
         <div className="price-row">
           <span>₹{product.price}</span>
 

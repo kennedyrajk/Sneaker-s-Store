@@ -1,59 +1,51 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-
-import ProductCard from "./ProductCard.jsx";
 import api from "../services/api.js";
+import ProductSection from "./ProductSection.jsx";
+export default function FeaturedProducts({ products }) {
 
-import { fadeUp } from "../animations/fadeUp.js";
-import "../styles/FeaturedProducts.css";
-export default function FeaturedProducts() {
 
-const [products,setProducts]=useState([]);
+  return (
 
-useEffect(()=>{
+    <>
 
-fetchProducts();
+      <ProductSection
+        title="🔥 Trending Sneakers"
+        products={products.slice(0, 8)}
+      />
 
-},[]);
+      <ProductSection
+        title="🆕 New Arrivals"
+        products={products.slice(8, 16)}
+      />
 
-const fetchProducts=async()=>{
+      <ProductSection
+        title="⭐ Best Sellers"
+        products={products.slice(16, 24)}
+      />
 
-const res=await api.get("/products");
+      <ProductSection
+        title="👟 Nike Collection"
+        products={products.filter(product =>
+          product.brand?.toLowerCase().includes("nike")
+        )}
+      />
 
-setProducts(res.data);
+      <ProductSection
+        title="👟 Adidas Collection"
+        products={products.filter(product =>
+          product.brand?.toLowerCase().includes("adidas")
+        )}
+      />
 
-};
+      <ProductSection
+        title="🔥 Jordan Collection"
+        products={products.filter(product =>
+          product.brand?.toLowerCase().includes("jordan")
+        )}
+      />
 
-return(
+    </>
 
-<section className="featured">
-
-<motion.div
-    variants={fadeUp}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
->
-    <h1>Trending Sneakers</h1>
-
-    <p>Premium Collection</p>
-</motion.div>
-
-<div className="products-grid">
-
-{products.map(product=>(
-
-<ProductCard
-key={product._id}
-product={product}
-/>
-
-))}
-
-</div>
-
-</section>
-
-);
+  );
 
 }

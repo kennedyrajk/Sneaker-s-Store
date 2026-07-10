@@ -52,15 +52,13 @@ function HeroSlider() {
                 }}
               >
                 <h1>{slide.title}</h1>
-
-                <p>{slide.subtitle}</p>
-
-                <button>
-                  Shop Now
-                </button>
-              </motion.div>
-            </div>
-          </section>
+ <p>{slide.subtitle}</p>
+          <button>
+           Shop Now
+        </button>
+      </motion.div>
+    </div>
+      </section>
         </div>
       ))}
     </Carousel>

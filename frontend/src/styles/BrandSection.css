@@ -1,0 +1,39 @@
+.brand-section{
+padding:90px 60px;
+background:#0a0a0a;
+text-align:center;
+}
+
+.brand-section h2{
+font-size:2.4rem;
+margin-bottom:50px;
+font-weight:800;
+}
+
+.brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
+}
+.brand-card{
+background:#111;
+border-radius:25px;
+padding:45px 20px;
+cursor:pointer;
+transition:.35s;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.brand-card:hover{
+box-shadow:
+0 15px 45px rgba(255,255,255,.08);
+}
+.brand-icon{
+font-size:3.5rem;
+margin-bottom:20px;
+}
+
+.brand-card h3{
+font-size:1.2rem;
+font-weight:700;
+}
