@@ -1,0 +1,44 @@
+.brand-filter {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    margin-bottom: 50px;
+}
+
+.brand-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.brand-filter {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.brand-btn {
+    flex: 0 0 auto;
+    padding: 14px 28px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 40px;
+    background: #141414;
+    color: white;
+    cursor: pointer;
+    transition: .35s;
+    font-size: .95rem;
+}
+
+.brand-btn:hover {
+    transform: translateY(-4px);
+    background: #1d1d1d;
+}
+
+.brand-btn.active {
+
+    background: white;
+    color: black;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(255,255,255,.18);
+}

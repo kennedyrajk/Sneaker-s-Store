@@ -4,7 +4,6 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import ProductCard from "./ProductCard";
 import { fadeUp } from "../animations/fadeUp";
-
 import "../styles/ProductSection.css";
 
 export default function ProductSection({ title, products }) {

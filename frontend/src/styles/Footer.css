@@ -1,0 +1,40 @@
+.footer{
+background:#080808;
+padding:70px 60px 30px;
+}
+
+.footer-top{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:50px;
+}
+.footer h2{
+margin-bottom:15px;
+}
+
+.footer h4{
+margin-bottom:20px;
+}
+
+.footer p{
+margin-bottom:10px;
+color:#aaa;
+cursor:pointer;
+}
+
+.social{
+display:flex;
+gap:18px;
+font-size:1.4rem;
+margin-top:15px;
+}
+
+.footer hr{
+margin:40px 0 20px;
+border:.5px solid #222;
+}
+
+.copy{
+text-align:center;
+color:#666;
+}

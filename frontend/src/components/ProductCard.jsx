@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaHeart } from "react-icons/fa";
 import "../styles/ProductCard.css";
@@ -5,6 +6,10 @@ import { fadeUp } from "../animations/fadeUp";
 
 export default function ProductCard({ product }) {
   return (
+    <Link
+  to={`/product/${product._id}`}
+  className="product-link"
+>
     <motion.div
       className="product-card"
       variants={fadeUp}
@@ -39,5 +44,6 @@ export default function ProductCard({ product }) {
         </div>
       </div>
     </motion.div>
+ </Link>
   );
 }

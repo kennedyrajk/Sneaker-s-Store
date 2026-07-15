@@ -80,3 +80,12 @@ transition:.3s;
 .price-row button:hover{
 transform:scale(1.05);
 }
+.product-link{
+
+text-decoration:none;
+
+color:inherit;
+
+display:block;
+
+}

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-
 import HeroSlider from "../components/HeroSlider";
 import FeaturedProducts from "../components/FeaturedProducts";
 import BrandSection from "../components/BrandSection";
-import Footer from "../components/Footer";
 import api from "../services/api";
 import Navbar from "../components/Navbar";
+import WhyChooseUs from "../components/WhyChooseUs";
+import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -26,12 +27,16 @@ export default function Home() {
     <>
       <Navbar/>
       <HeroSlider />
-      <FeaturedProducts
-        products={products}
-      />
       <BrandSection
         products={products}
       />
+      <FeaturedProducts
+        products={products}
+      />
+      
+      <WhyChooseUs/>
+    <Newsletter/>
+    <Footer/>
       
     </>
   );

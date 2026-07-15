@@ -1,0 +1,33 @@
+.sort-container{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:15px;
+    margin-bottom:45px;
+}
+.sort-container label{
+    font-size:1rem;
+    font-weight:600;
+    color:#bbb;
+}
+
+.sort-container select{
+    padding:12px 20px;
+    background:#141414;
+    color:white;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    outline:none;
+    cursor:pointer;
+    font-size:.95rem;
+    transition:.3s;
+}
+
+.sort-container select:hover{
+    border-color:white;
+}
+
+.sort-container select:focus{
+    box-shadow:
+    0 0 15px rgba(255,255,255,.15);
+}

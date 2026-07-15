@@ -10,18 +10,38 @@ margin-bottom:50px;
 font-weight:800;
 }
 
-.brands-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:30px;
+.section-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
+
+.brands-scroll{
+display:flex;
+gap:25px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding-bottom:10px;
+}
+
+.brands-scroll::-webkit-scrollbar{
+display:none;
+}
+
+.brands-scroll{
+-ms-overflow-style:none;
+scrollbar-width:none;
 }
 .brand-card{
+min-width:200px;
 background:#111;
 border-radius:25px;
 padding:45px 20px;
 cursor:pointer;
 transition:.35s;
 border:1px solid rgba(255,255,255,.08);
+flex-shrink:0;
 }
 
 .brand-card:hover{
@@ -36,4 +56,24 @@ margin-bottom:20px;
 .brand-card h3{
 font-size:1.2rem;
 font-weight:700;
+}
+.arrow-buttons{
+    display:flex;
+    gap:15px;
+}
+.arrow-buttons button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#1d1d1d;
+    color:white;
+    transition:.3s;
+}
+
+.arrow-buttons button:hover{
+    background:white;
+    color:black;
+    transform:scale(1.08);
 }
