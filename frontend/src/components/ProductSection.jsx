@@ -4,20 +4,21 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import ProductCard from "./ProductCard";
 import { fadeUp } from "../animations/fadeUp";
+
 import "../styles/ProductSection.css";
 
-export default function ProductSection({ title, products }) {
-  const scrollRef = useRef();
+export default function ProductSection({ title, products = [] }) {
+  const scrollRef = useRef(null);
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({
+    scrollRef.current?.scrollBy({
       left: -420,
       behavior: "smooth",
     });
   };
 
   const scrollRight = () => {
-    scrollRef.current.scrollBy({
+    scrollRef.current?.scrollBy({
       left: 420,
       behavior: "smooth",
     });
@@ -45,13 +46,28 @@ export default function ProductSection({ title, products }) {
         </div>
       </div>
 
-      <div className="horizontal-scroll" ref={scrollRef}>
-        {products.map((product) => (
-          <ProductCard
-            key={product._id}
-            product={product}
-          />
-        ))}
+      <div
+        className="horizontal-scroll"
+        ref={scrollRef}
+      >
+        {products.length > 0 ? (
+          products.map((product) => (
+            <ProductCard
+              key={product._id}
+              product={product}
+            />
+          ))
+        ) : (
+          <p
+            style={{
+              color: "#888",
+              padding: "20px",
+              fontSize: "1.1rem",
+            }}
+          >
+            No related products found.
+          </p>
+        )}
       </div>
     </motion.section>
   );

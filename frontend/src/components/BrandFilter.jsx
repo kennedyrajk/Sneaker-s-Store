@@ -16,6 +16,9 @@ const brands = [
   "Toyota",
   "Porsche",
   "Lamborghini",
+  "New Balance",
+  "Reebok",
+  "Under Armour",
 ];
 
 export default function BrandFilter({

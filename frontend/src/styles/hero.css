@@ -1,9 +1,7 @@
 .hero-slide {
   height: 100vh;
   width: 100%;
-
   position: relative;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,13 +10,10 @@
 .overlay {
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: flex-start;
-
   padding-left: 8%;
   padding-top: 60px;
 
@@ -33,52 +28,35 @@
 
 .overlay h1 {
   color: white;
-
   font-size: clamp(3rem, 8vw, 6rem);
-
   font-weight: 900;
-
   text-transform: uppercase;
-
   line-height: 1;
-
   max-width: 900px;
-
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-
   margin-bottom: 20px;
 }
 
 .overlay p {
   color: rgba(255, 255, 255, 0.9);
-
   font-size: 1.4rem;
-
   margin-bottom: 35px;
 }
 
 .overlay button {
   padding: 16px 42px;
-
   border: none;
-
   border-radius: 50px;
-
   background: white;
-
   color: black;
-
   font-size: 1rem;
   font-weight: 700;
-
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
 .overlay button:hover {
   transform: translateY(-4px);
-
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
 }
 

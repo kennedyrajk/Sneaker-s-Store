@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {SiNike,SiAdidas,SiPuma,SiJordan,SiKoenigsegg,SiBmw,SiMclaren,SiChevrolet,SiMini,SiToyota,SiPorsche,SiLamborghini} from "react-icons/si";
+import {SiNike,SiAdidas,SiPuma,SiJordan,SiKoenigsegg,SiBmw,SiMclaren,SiChevrolet,SiMini,SiToyota,SiPorsche,SiLamborghini,SiNewbalance,SiReebok,SiUnderarmour,} from "react-icons/si";
 import { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/BrandSection.css";
@@ -59,23 +59,37 @@ const brands=[{
     name:"Lamborghini",
     icon:<SiLamborghini/>
     },
+
+    {
+    name:"Newbalance",
+    icon:<SiNewbalance/>
+    },
+    {
+    name:"Reebok",
+    icon:<SiReebok/>
+    },
+
+    {
+    name:"Underarmour",
+    icon:<SiUnderarmour/>
+    },
+
     ];
 
     const scrollRef = useRef();
+    const scrollLeft = () => {
+    scrollRef.current.scrollBy({
+        left: -350,
+        behavior: "smooth",
+    });
+    };
 
-const scrollLeft = () => {
-  scrollRef.current.scrollBy({
-    left: -350,
-    behavior: "smooth",
-  });
-};
-
-const scrollRight = () => {
-  scrollRef.current.scrollBy({
-    left: 350,
-    behavior: "smooth",
-  });
-};
+    const scrollRight = () => {
+    scrollRef.current.scrollBy({
+        left: 350,
+        behavior: "smooth",
+    });
+    };
 
     return(
 

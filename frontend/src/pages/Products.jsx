@@ -4,8 +4,11 @@ import ProductSearch from "../components/ProductSearch";
 import BrandFilter from "../components/BrandFilter";
 import SortDropdown from "../components/SortDropdown";
 import ProductsGrid from "../components/ProductsGrid";
+import Footer from "../components/Footer"
 import api from "../services/api";
 import "../styles/Products.css";
+import WhyChooseUs from "../components/WhyChooseUs";
+import Newsletter from "../components/Newsletter";
 export default function Products() {
 
     const [products,setProducts]=useState([]);
@@ -102,6 +105,12 @@ export default function Products() {
         <ProductsGrid
             products={filteredProducts}
         />
+        
+        <WhyChooseUs/>
+
+        <Newsletter/>
+        
+        <Footer/>
     </section>
     </>
     );

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 import {
   FaShoppingCart,
@@ -11,6 +13,9 @@ import "../styles/navbar.css";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { cartItems } = useContext(CartContext);
+
+console.log(cartItems);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +25,7 @@ function Navbar() {
         setScrolled(false);
       }
     };
+    
 
     window.addEventListener("scroll", handleScroll);
 
