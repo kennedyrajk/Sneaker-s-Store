@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import { FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
-
+import { CartContext } from "../context/CartContext";
 import Navbar from "../components/Navbar";
 import ProductSection from "../components/ProductSection";
 import api from "../services/api";
@@ -12,6 +12,7 @@ import "../styles/ProductDetails.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
+  const { addToCart } = useContext(CartContext);
 
   const [product, setProduct] = useState(null);
 
@@ -58,6 +59,11 @@ export default function ProductDetails() {
       console.log(err);
     }
   };
+  const handleAddToCart = () => {
+  addToCart(product, selectedSize, quantity);
+
+  console.log("Product added to cart");
+};
 
   if (!product) {
     return (
@@ -206,9 +212,8 @@ export default function ProductDetails() {
           </div>
 
           <div className="action-buttons">
-            <button className="cart-btn">
-              Add To Cart
-            </button>
+            <button className="cart-btn"
+                  onClick={handleAddToCart}>Add To Cart</button>
 
             <button className="buy-btn">
               Buy Now

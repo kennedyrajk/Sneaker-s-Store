@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
+
 import {
   FaShoppingCart,
   FaUser,
@@ -12,10 +13,14 @@ import {
 import "../styles/navbar.css";
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const { cartItems } = useContext(CartContext);
-
+const cartCount = cartItems.reduce(
+  (total, item) => total + item.quantity,
+  0
+);
 console.log(cartItems);
+  const [scrolled, setScrolled] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,9 +69,18 @@ console.log(cartItems);
       </div>
 
       <div className="nav-icons">
-        <Link to="/cart">
-          <FaShoppingCart />
-        </Link>
+        <Link
+  to="/cart"
+  className="cart-icon-wrapper"
+>
+  <FaShoppingCart />
+
+  {cartCount > 0 && (
+    <span className="cart-badge">
+      {cartCount}
+    </span>
+  )}
+</Link>
 
         <Link to="/login">
           <FaUser />
