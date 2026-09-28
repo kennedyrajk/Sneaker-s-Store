@@ -24,11 +24,10 @@ export default function ProductDetails() {
 
   const [quantity, setQuantity] = useState(1);
 
-  useEffect(() => {
-    fetchProduct();
-  }, [id]);
-
-  const fetchProduct = async () => {
+  
+  
+useEffect(() => {
+ const fetchProduct = async () => {
     try {
       const res = await api.get(`/products/${id}`);
 
@@ -41,6 +40,9 @@ export default function ProductDetails() {
       console.log(err);
     }
   };
+   
+    fetchProduct();
+  }, [id]);
 
   const fetchRelatedProducts = async (brand, currentId) => {
     try {
