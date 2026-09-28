@@ -7,6 +7,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 import ManageProducts from "../pages/ManageProducts";
+import AdminRoute from "../components/AdminRoute";
+import AddProduct from "../pages/AddProduct";
 
 function AppRoutes() {
   return (
@@ -22,12 +24,24 @@ function AppRoutes() {
       <Route path="/login" element={<Login />} />
 
       <Route path="/register" element={<Register />} />
-      
-      <Route path="/dashboard" element={<Dashboard />} />
 
       <Route
-        path="/dashboard/products"
-        element={<ManageProducts />}
+  path="/dashboard/add-product"
+  element={<AddProduct />}
+/>
+      
+      <Route path="/dashboard" element={
+        <AdminRoute>
+          <Dashboard />
+        </AdminRoute>
+      }
+    />
+
+      <Route path="/dashboard/products" element={
+          <AdminRoute>
+            <ManageProducts />
+          </AdminRoute>
+        }
       />
     </Routes>
   );

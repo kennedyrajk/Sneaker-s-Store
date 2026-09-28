@@ -61,3 +61,43 @@
   font-size: 0.7rem;
   font-weight: 800;
 }
+.user-menu{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:55px;
+  right:0;
+  width:180px;
+  background:#111;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.5);
+  z-index:9999;
+}
+
+.dropdown-menu a,
+.dropdown-menu button{
+  display:block;
+  width:100%;
+  padding:14px 18px;
+  background:none;
+  border:none;
+  text-align:left;
+  color:white;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:.95rem;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover{
+  background:#222;
+}

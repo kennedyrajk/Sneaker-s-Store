@@ -6,9 +6,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem("user");
 
-    return savedUser
-      ? JSON.parse(savedUser)
-      : null;
+    return savedUser ? JSON.parse(savedUser) : null;
   });
 
   const [token, setToken] = useState(() => {
@@ -34,19 +32,33 @@ export function AuthProvider({ children }) {
     }
   }, [token]);
 
+  const login = (userData) => {
+    setUser(userData);
+    setToken(userData.token);
+  };
+
   const logout = () => {
     setUser(null);
     setToken("");
+
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
   };
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        setUser,
         token,
+
+        setUser,
         setToken,
+
+        login,
         logout,
+
+        isLoggedIn: !!user,
+        isAdmin: user?.isAdmin || false,
       }}
     >
       {children}

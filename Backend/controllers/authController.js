@@ -1,14 +1,9 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
-
-const generateToken = require(
-  "../utils/generateToken"
-);
-
+const generateToken = require("../utils/generateToken");
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password } =
-      req.body;
+    const { name, email, password } = req.body;
 
     const userExists = await User.findOne({
       email,
@@ -21,9 +16,10 @@ const registerUser = async (req, res) => {
     }
 
     const salt = await bcrypt.genSalt(10);
-
-    const hashedPassword =
-      await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(
+      password,
+      salt
+    );
 
     const user = await User.create({
       name,
@@ -35,6 +31,7 @@ const registerUser = async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      isAdmin: user.isAdmin,
       token: generateToken(user._id),
     });
   } catch (error) {
@@ -47,7 +44,6 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-
     const user = await User.findOne({
       email,
     });
@@ -59,10 +55,11 @@ const loginUser = async (req, res) => {
         user.password
       ))
     ) {
-      res.json({
+      res.status(200).json({
         _id: user._id,
         name: user.name,
         email: user.email,
+        isAdmin: user.isAdmin,
         token: generateToken(user._id),
       });
     } else {

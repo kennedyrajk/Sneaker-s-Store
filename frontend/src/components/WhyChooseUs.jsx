@@ -44,7 +44,6 @@ return(
     once:false,
     amount:0.2
     }}
-
 >
 <h2>Why Choose SneakerX</h2>
 <div className="why-grid">
