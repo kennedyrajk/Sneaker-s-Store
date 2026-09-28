@@ -7,7 +7,7 @@ export default function AdminRoute({ children }) {
   const { user } = useContext(AuthContext);
 
   if (!user) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   if (!user.isAdmin) {

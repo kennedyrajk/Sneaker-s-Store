@@ -3,9 +3,7 @@ import Home from "../pages/Home";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
-import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Dashboard from "../pages/Dashboard";
 import ManageProducts from "../pages/ManageProducts";
 import AdminRoute from "../components/AdminRoute";
 import AddProduct from "../pages/AddProduct";
@@ -21,7 +19,6 @@ function AppRoutes() {
 
       <Route path="/cart" element={<Cart />} />
 
-      <Route path="/login" element={<Login />} />
 
       <Route path="/register" element={<Register />} />
 
@@ -30,12 +27,7 @@ function AppRoutes() {
   element={<AddProduct />}
 />
       
-      <Route path="/dashboard" element={
-        <AdminRoute>
-          <Dashboard />
-        </AdminRoute>
-      }
-    />
+      
 
       <Route path="/dashboard/products" element={
           <AdminRoute>

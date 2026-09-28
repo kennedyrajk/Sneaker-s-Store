@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../context/AuthContext";
 import api from "../services/api";
@@ -68,61 +68,51 @@ export default function Register() {
     }
   };
 
-  return (
-    <section className="register-page">
-      <div className="register-card">
-        <h1>Create Account</h1>
+return (
+  <section className="register-page">
+    <div className="register-card">
+      <h1>Create Account</h1>
 
-        <p>
-          Join SneakerX and start shopping.
-        </p>
+      <p>
+        Join SneakerX and start shopping.
+      </p>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
 
-          <button
-            type="submit"
-            disabled={loading}
-          >
-            {loading
-              ? "Creating..."
-              : "Create Account"}
-          </button>
-        </form>
-
-        <p className="login-link">
-          Already have an account?
-
-          <Link to="/login">
-            Login
-          </Link>
-        </p>
-      </div>
-    </section>
-  );
+        <button
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? "Creating..." : "Create Account"}
+        </button>
+      </form>
+    </div>
+  </section>
+);
 }

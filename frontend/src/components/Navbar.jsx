@@ -131,9 +131,9 @@ function Navbar() {
             )}
           </div>
         ) : (
-          <Link to="/login">
+          
             <FaUser />
-          </Link>
+          
         )}
       </div>
     </motion.nav>
